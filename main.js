@@ -77,25 +77,44 @@ function mainMenu() {
 
     } else if (selection == 'count50') {
         // Count how many grades are below 50.  Output the result.
+        let num = 0
         for (let i = 0; i < grades.length; i++) {
             if (grades[i] < 50) {
-                let num = 0
                 num++
             }
-        } 
-        outputEl.innerHTML = 'Count grades below 50: ' + num +'.';
+        }
+        outputEl.innerHTML = 'Count grades below 50:  ' + num;
 
     } else if (selection == 'change50') {
         // Change all grades that are below 50 to be equal to 50.
+        for (let i = 0; i < grades.length; i++) {
+            if (grades[i] < 50) {
+                grades[i] = 50
+            }
+        }
         outputEl.innerHTML = 'Change low grades to 50';
+
     } else if (selection == 'increase10') {
         // Increase each grade by 10%.
+        for (let i = 0; i < grades.length; i++) {
+            grades[i] = grades[i] + grades[i] / 10
+        }
         outputEl.innerHTML = 'Increase all grades by 10%';
+
     } else if (selection == 'decrease10') {
         // Decrease each grade by 10%.
+        for (let i = 0; i < grades.length; i++) {
+            grades[i] = grades[i] - grades[i] / 10
+        }
         outputEl.innerHTML = 'Decrease all grades by 10%';
+
     } else if (selection == 'remove50') {
         // Remove all grades that are below 50.
+        for (let i = 0; i < grades.length; i++) {
+            if (grades[i] < 50) {
+                grades.splice(i--, 1)
+            }
+        }
         outputEl.innerHTML = 'Remove grades below 50';
     }
 }
