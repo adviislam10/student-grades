@@ -55,19 +55,17 @@ function mainMenu() {
 
     } else if (selection == 'last50') {
         // Set the grade of the last student to 50. 
-        grades[11] = 50
+        grades[grades.length - 1] = 50
         outputEl.innerHTML = 'Last grade to 50';
 
     } else if (selection == 'random100') {
         // Set the grade of a random student to 100.
-        let i = Math.randomInt(0, 12)
-        grades[i] = 100
+        grades[Math.randomInt(0, grades.length)] = 100
         outputEl.innerHTML = 'Random grade to 100';
 
     } else if (selection == 'addRandom') {
         // Add a random grade between 0 and 100 to the end of the array.
-        let i = Math.randomInt(0, 100)
-        grades.push(i)
+        grades.push(Math.randomInt(0, 100))
         outputEl.innerHTML = 'Add random grade';
 
     } else if (selection == 'removeLast') {
