@@ -8,7 +8,8 @@ cnv.height = 600;
 
 // Global Variables
 let grades = [];
-for(let i = 0; i <=50; i++){
+
+for(let i = 0; i < 50; i++){
     grades.push(Math.randomInt(0, 100));
 }
 
